@@ -1,78 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreshBite - Online Food Ordering</title>
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h1>🍕 FreshBite</h1>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+
+                <button class="login-btn" id="loginBtn">
+                    Login
+                </button>
+
+                <span id="welcomeUser"
+                    style="display:none; color:white; font-weight:bold; margin:0 10px;">
+                </span>
+
+                <button class="login-btn" id="logoutBtn" style="display:none;">
+                    Logout
+                </button>
+
+                <div class="menu-toggle">
+                    ☰
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h2>Welcome to FreshBite</h2>
+
+            <p>Order delicious food from your favorite restaurants.</p>
+
+            <a href="#restaurants" class="btn">
+                Order Now
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================= RESTAURANTS ================= -->
+
+    <section id="restaurants" class="restaurants">
+
+        <h2>Popular Restaurants</h2>
+
+        <div class="restaurant-container">
+
+            <div class="restaurant-card">
+
+                <img src="images/restaurants/restaurant1.jpg"
+                    alt="Pizza Palace">
+
+                <h3>Pizza Palace</h3>
+
+                <p>Italian • Pizza • Fast Food</p>
+
+            </div>
+
+            <div class="restaurant-card">
+
+                <img src="images/restaurants/restaurant2.jpg"
+                    alt="Biryani House">
+
+                <h3>Biryani House</h3>
+
+                <p>Hyderabadi • Biryani</p>
+
+            </div>
+
+            <div class="restaurant-card">
+
+                <img src="images/restaurants/restaurant3.jpg"
+                    alt="Burger King">
+
+                <h3>Burger King</h3>
+
+                <p>Burgers • Snacks</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MENU ================= -->
+
+    <section id="menu" class="section">
+
+        <h2>Our Menu</h2>
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="🔍 Search your favourite food..."
+        >
+
+        <div class="menu-container">
+
+            <div class="card menu-card">
+
+                <h3>🍕 Pizza</h3>
+
+                <p class="price">₹199</p>
+
+                <button
+                    class="cart-btn"
+                    data-name="Pizza"
+                    data-price="199">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+            <div class="card menu-card">
+
+                <h3>🍔 Burger</h3>
+
+                <p class="price">₹149</p>
+
+                <button
+                    class="cart-btn"
+                    data-name="Burger"
+                    data-price="149">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+                        <div class="card menu-card">
+
+                <h3>🍛 Biryani</h3>
+
+                <p class="price">₹99</p>
+
+                <button
+                    class="cart-btn"
+                    data-name="Biryani"
+                    data-price="99">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+            <div class="card menu-card">
+
+                <h3>🍹 Drinks</h3>
+
+                <p class="price">₹99</p>
+
+                <button
+                    class="cart-btn"
+                    data-name="Drinks"
+                    data-price="99">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+            <div class="card menu-card">
+
+                <h3>🍰 Desserts</h3>
+
+                <p class="price">₹129</p>
+
+                <button
+                    class="cart-btn"
+                    data-name="Desserts"
+                    data-price="129">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ================= SHOPPING CART ================= -->
+
+        <div class="cart">
+
+            <h2>
+                🛒 Shopping Cart
+                (<span id="cartCount">0</span>)
+            </h2>
+
+            <ul id="cartItems">
+
+            </ul>
+
+            <h3>
+                Total : ₹<span id="totalPrice">0</span>
+            </h3>
+
+            <button id="checkoutBtn">
+                Checkout
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= OFFERS ================= -->
+
+    <section id="offers" class="section">
+
+        <h2>Today's Offers</h2>
+
+        <p>
+            Flat 50% OFF on selected restaurants.
+        </p>
+
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="section">
+
+        <h2>Contact Us</h2>
+
+        <p>Email : support@freshbite.com</p>
+
+        <p>Phone : +91 9876543210</p>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>© 2026 FreshBite. All Rights Reserved.</p>
+
+    </footer>
+        <!-- ================= LOGIN POPUP ================= -->
+
+    <div class="login-modal" id="loginModal">
+
+        <div class="login-box">
+
+            <span class="close-btn" id="closeLogin">&times;</span>
+
+            <h2>Login</h2>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <button id="loginSubmit">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= DELIVERY ADDRESS MODAL ================= -->
+
+    <div class="login-modal" id="addressModal">
+
+        <div class="login-box">
+
+            <span class="close-btn" id="closeAddress">&times;</span>
+
+            <h2>Delivery Address</h2>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Full Name"
+            >
+
+            <input
+                type="text"
+                id="phoneNumber"
+                placeholder="Phone Number"
+            >
+
+            <textarea
+                id="deliveryAddress"
+                placeholder="Enter Delivery Address"
+                rows="4"
+                style="width:100%; padding:12px; margin-top:12px; border:1px solid #ccc; border-radius:8px;"
+            ></textarea>
+
+            <button id="placeOrderBtn">
+                Place Order
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= ORDER SUCCESS POPUP (Optional) ================= -->
+
+    <div id="orderSuccess" class="success-popup">
+
+        <div class="success-box">
+
+            <h2>🎉 Order Placed!</h2>
+
+            <p>Thank you for ordering from FreshBite.</p>
+
+            <button id="closeSuccess">
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
-<header>
-    <nav>
-        <h1>🍕 FreshBite</h1>
-
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#restaurants">Restaurants</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#cart">Cart</a></li>
-            <li><a href="#checkout">Checkout</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<section id="home"></section>
-
-<section id="restaurants"></section>
-
-<section id="menu"></section>
-
-<section id="cart"></section>
-
-<section id="checkout"></section>
-
-<section id="account"></section>
-
-<section id="about"></section>
-
-<section id="contact"></section>
-<section id="home">
-    <h2>Welcome to FreshBite</h2>
-</section>
-
-<section id="restaurants">
-    <h2>Restaurants</h2>
-</section>
-
-<section id="menu">
-    <h2>Our Menu</h2>
-</section>
-
-<section id="cart">
-    <h2>Your Cart</h2>
-</section>
-
-<section id="checkout">
-    <h2>Checkout</h2>
-</section>
-
-<section id="account">
-    <h2>My Account</h2>
-</section>
-
-<section id="about">
-    <h2>About Us</h2>
-</section>
-
-<section id="contact">
-    <h2>Contact Us</h2>
-</section>
-<footer>
-    <p>© 2026 FreshBite. All Rights Reserved.</p>
-</footer>
-<script src="script.js"></script>
